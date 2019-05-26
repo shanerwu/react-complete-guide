@@ -30,7 +30,7 @@ class App extends Component {
     });
 
     // always create a copy, and then manipulate it.
-    const person = {...this.state.persons[personIndex]};
+    const person = { ...this.state.persons[personIndex] };
     // const person = Object.assign({}, this.state.persons[personIndex]);
     person.name = event.target.value;
 
@@ -53,14 +53,15 @@ class App extends Component {
     // const persons = this.state.persons.slice();
     const persons = [...this.state.persons];
     persons.splice(personIndex, 1);
-    this.setState({persons: persons});
+    this.setState({ persons: persons });
   }
 
   render() {
 
     const style = {
-      backgroundColor: 'white',
-      border: '1px solid blue',
+      backgroundColor: 'LightSalmon',
+      color: 'white',
+      border: '1px solid #fffff',
       padding: '8px',
       cursor: 'pointer'
     }
@@ -80,10 +81,23 @@ class App extends Component {
           })}
         </div>
       );
+      style.backgroundColor = 'LightSeaGreen';
+    }
+
+    const classes = [];
+
+    if (this.state.persons.length <= 2) {
+      classes.push('lightSalmon');
+    }
+
+    if (this.state.persons.length <= 1) {
+      classes.push('bold');
     }
 
     return (
       <div className="App">
+        <h1>Hi I'm React App</h1>
+        <p className={classes.join(' ')}>This is really working!</p>
         <button
           style={style}
           onClick={this.togglePersonHan}>Switch Name</button>
