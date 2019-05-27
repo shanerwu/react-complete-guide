@@ -1,3 +1,8 @@
+# React 初學者 Lab
+
+[React - The Complete Guide](https://www.udemy.com/react-the-complete-guide-incl-redux/) 課程練習。
+
+---
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
