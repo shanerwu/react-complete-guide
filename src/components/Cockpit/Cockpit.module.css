@@ -1,0 +1,35 @@
+.lightSalmon {
+    color: lightSalmon;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.Cockpit button {
+  background-color: lightseagreen;
+  color: white;
+  border: 1px solid white;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.Cockpit button:hover {
+  color: lightseagreen;
+  border: 2px solid lightseagreen;
+  background-color: white;
+}
+
+.Cockpit button.Salmon {
+  background-color: white;
+  color: lightSalmon;
+  border: 2px solid lightSalmon;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.Cockpit button.Salmon:hover {
+  color: white;
+  border: 1px solid white;
+  background-color: lightSalmon;
+}
