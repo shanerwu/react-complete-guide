@@ -5,14 +5,27 @@ import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
 
-  state = {
-    persons: [
-      { id: 'qaz', name: 'Max', age: 28 },
-      { id: 'wsx', name: 'Manu', age: 29 },
-      { id: 'edc', name: 'Yo', age: 26 }
-    ],
-    otherState: 'some other value',
-    showPersons: false
+  constructor(props) {
+    super(props);
+    console.log('[App.js] constructor');
+    this.state = {
+      persons: [
+        { id: 'qaz', name: 'Max', age: 28 },
+        { id: 'wsx', name: 'Manu', age: 29 },
+        { id: 'edc', name: 'Yo', age: 26 }
+      ],
+      otherState: 'some other value',
+      showPersons: false
+    }
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    console.log('[App.js] getDerivedStateFromProps', props);
+    return state;
+  }
+
+  componentDidMount() {
+    console.log('[App.js] componentDidMount');
   }
 
   switchNameHandler = (newName) => {
@@ -58,7 +71,7 @@ class App extends Component {
   }
 
   render() {
-
+    console.log('[App.js] render');
     let persons = null;
 
     if (this.state.showPersons) {
@@ -72,6 +85,7 @@ class App extends Component {
     return (
       <div className={classes.App}>
         <Cockpit
+          title={this.props.appTitle}
           persons={this.state.persons}
           showPersons={this.state.showPersons}
           click={this.togglePersonHan} />
