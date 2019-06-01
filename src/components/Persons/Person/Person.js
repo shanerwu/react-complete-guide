@@ -9,7 +9,7 @@ class Person extends Component {
             <div className={classes.Person}>
                 <p onClick={this.props.click}>I'm {this.props.name} and I am {this.props.age} years old!</p>
                 <p>{this.props.children}</p>
-                <input type="text" onChange={this.props.changed} />
+                <input type="text" value={this.props.name} onChange={this.props.changed} />
             </div>
         )
     }
